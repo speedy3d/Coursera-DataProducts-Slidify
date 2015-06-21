@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="BMI Calculator">
+  <meta name="author" content="Ryan Wissman">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>BMI Calculator</h1>
+    <h2>Using the Shiny BMI Calculator APP</h2>
+    <p>Ryan Wissman<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Body Mass Index</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Body mass index is a measure of body fat based on weight and height</li>
+<li>This measure is a simple way to determine your body&#39;s current status (normal, underweight, overweight)</li>
+<li>Knowing only your height and weight the BMI calculator can quickly determine your BMI category and will place your current status on a chart of BMI ranges</li>
+<li>This calculator was designed to be easy to use and can be used by any user</li>
+<li>The APP was designed to use either imperial or metric measurements so it can be used by just about anybody</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The BMI Weight Ranges</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>While an imperfect measure, BMI does have weight ranges </li>
+<li>The following table displays the CDC published ranges for BMI</li>
+</ol>
+
+<table><thead>
+<tr>
+<th>BMI</th>
+<th>Weight Status</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Below 18.5</td>
+<td>Underweight</td>
+</tr>
+<tr>
+<td>18.5 - 24.9</td>
+<td>Normal or Healthy Weight</td>
+</tr>
+<tr>
+<td>25.0 - 29.9</td>
+<td>Overweight</td>
+</tr>
+<tr>
+<td>30.0 and Above</td>
+<td>Obese</td>
+</tr>
+</tbody></table>
+
+<ol>
+<li>You can find more information on the CDC&#39;s website:</li>
+<li><a href="http://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html">http://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html</a></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The Formula (Imperial)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>There are two distinct formulas used to calculate BMI. </li>
+<li>The formula to calculate BMI for imperial measurements is as follows</li>
+<li>Weight (in pounds) / (Height (in inches) * Height (in inches)) * 703</li>
+<li>703 is a constant. </li>
+<li>For example, let&#39;s say you have a height of 69 inches and weight 165 pounds:</li>
+</ol>
+
+<pre><code class="r">165 / 69^2 * 702
+</code></pre>
+
+<pre><code>## [1] 24.32892
+</code></pre>
+
+<ol>
+<li>The number displayed above would be your BMI and it would indicate that you have a normal weight.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The Formula (Metric)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>For metric measures the formula is the same, without the constant 703 as follows</li>
+<li>Weight (in kilograms) / (Height (in centimeters) * Height (in centimeters) / 100)</li>
+<li>Therefore, if we have a weight of 70kg and a height of 2.0 meters (200 centimeters):</li>
+</ol>
+
+<pre><code class="r">70 / (200/100)^2
+</code></pre>
+
+<pre><code>## [1] 17.5
+</code></pre>
+
+<ol>
+<li>The number above would indicate that we have a normal body weight.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Shiny BMI Calculator App</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>The shiny BMI calculator is a great way to quickly determine your BMI</li>
+<li>The app will give you an instant answer as to wether you have a healthy or unhealthy weight</li>
+<li>Another useful feature of the app is that it will display a chart indicating health and unhealthy weight ranges and plot your input criteria directly on the chart</li>
+<li>You can access the BMI calculator here: <a href="https://speedy3d.shinyapps.io/Coursera-DataProducts-Project-BMI">https://speedy3d.shinyapps.io/Coursera-DataProducts-Project-BMI</a></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Body Mass Index'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The BMI Weight Ranges'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The Formula (Imperial)'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The Formula (Metric)'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Shiny BMI Calculator App'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
